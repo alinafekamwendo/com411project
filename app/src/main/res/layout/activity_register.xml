@@ -1,164 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#B0612713"
-    tools:context=".RegisterActivity">
-
-    <TextView
-        android:id="@+id/signuptxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kindily fill in these details to register as a member"
-        android:textColor="#E6D8D8"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/signup_constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="0dp"
-        android:background="@drawable/buttons_general"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signuptxt">
+        android:layout_height="wrap_content"
+        android:background="#B0612713"
+        tools:context=".loginRegister.RegisterActivity">
 
-        <EditText
-            android:id="@+id/signup_firstname"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/signuptxt"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:drawablePadding="20dp"
-            android:hint="enter firstname"
-            android:paddingLeft="15dp"
-            android:paddingTop="15dp"
-            android:paddingBottom="10dp"
-            android:background="@drawable/buttons_general"
+            android:text="Kindily fill in these detailregister as a member"
+            android:textColor="#E6D8D8"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.103"
-            app:layout_constraintWidth_percent=".8" />
+            app:layout_constraintVertical_bias="0.051" />
 
-        <EditText
-            android:id="@+id/login_surname"
-            android:layout_width="329dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/signup_constraintLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="0dp"
             android:background="@drawable/buttons_general"
-            android:drawablePadding="20dp"
-            android:hint="enter surname"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/signup_firstname"
-            app:layout_constraintStart_toStartOf="@+id/signup_firstname"
-            app:layout_constraintTop_toBottomOf="@+id/signup_firstname"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_percent=".8" />
-
-        <EditText
-            android:id="@+id/signup_username"
-            android:layout_width="329dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/buttons_general"
-            android:drawablePadding="20dp"
-            android:hint="enter username"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/login_surname"
-            app:layout_constraintStart_toStartOf="@+id/login_surname"
-            app:layout_constraintTop_toBottomOf="@+id/login_surname"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_percent=".8" />
-
-        <EditText
-            android:id="@+id/signup_email"
-            android:layout_width="329dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/buttons_general"
-            android:drawablePadding="20dp"
-            android:hint="email"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/signup_username"
-            app:layout_constraintStart_toStartOf="@+id/signup_username"
-            app:layout_constraintTop_toBottomOf="@+id/signup_username"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_percent=".8" />
-        <Button
-            android:id="@+id/register_button"
-            android:layout_width="329dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:drawablePadding="20dp"
-           android:text="Register now"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.634"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signup_email"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_percent=".8" />
+            app:layout_constraintTop_toBottomOf="@+id/signuptxt">
 
-        <TextView
-            android:id="@+id/signup_alreadytxt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="already have an account?"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_button"
-            app:layout_constraintVertical_bias="0.134" />
+            <EditText
+                android:id="@+id/signup_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_margin="20dp"
+                android:drawablePadding="20dp"
+                android:hint="enter firstname"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/buttons_general"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.103"
+                app:layout_constraintWidth_percent=".8" />
 
-        <Button
-            android:id="@+id/register_login"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:drawablePadding="20dp"
-            android:text="Register now"
-            android:paddingLeft="15dp"
-            android:layout_margin="20dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.634"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signup_alreadytxt"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_percent=".8" />
+            <EditText
+                android:id="@+id/login_surname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/buttons_general"
+                android:drawablePadding="20dp"
+                android:hint="enter surname"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/signup_firstname"
+                app:layout_constraintStart_toStartOf="@+id/signup_firstname"
+                app:layout_constraintTop_toBottomOf="@+id/signup_firstname"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintWidth_percent=".8" />
+
+            <EditText
+                android:id="@+id/signup_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/buttons_general"
+                android:drawablePadding="20dp"
+                android:hint="enter username"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/login_surname"
+                app:layout_constraintStart_toStartOf="@+id/login_surname"
+                app:layout_constraintTop_toBottomOf="@+id/login_surname"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintWidth_percent=".8" />
+
+            <EditText
+                android:id="@+id/signup_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/buttons_general"
+                android:drawablePadding="20dp"
+                android:hint="email"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/signup_username"
+                app:layout_constraintStart_toStartOf="@+id/signup_username"
+                app:layout_constraintTop_toBottomOf="@+id/signup_username"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintWidth_percent=".8" />
+            <Button
+                android:id="@+id/register_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:drawablePadding="20dp"
+                android:text="Register now"
+              android:layout_margin="20dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.634"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signup_email"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintWidth_percent=".8" />
+
+            <TextView
+                android:id="@+id/signup_alreadytxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="already have an account?"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_button"
+                app:layout_constraintVertical_bias="0.134" />
+
+            <Button
+                android:id="@+id/register_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:drawablePadding="20dp"
+                android:text="login"
+                android:paddingLeft="15dp"
+                android:layout_margin="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.634"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signup_alreadytxt"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintWidth_percent=".8" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
