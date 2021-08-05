@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.navigationdrawer.R;
+
 public class ChatHomeActivity extends AppCompatActivity {
 
     @Override

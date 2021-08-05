@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "819952610094",
+    "project_id": "kachisiapp",
+    "storage_bucket": "kachisiapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819952610094:android:da7b456a6fb25d61a828bf",
+        "android_client_info": {
+          "package_name": "com.example.navigationdrawer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819952610094-4tknoqjh9qkhjsk29csjns901j7jdbqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRKyJeDLBEb9A1sL4iMuiVYjKcjvw9oio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819952610094-4tknoqjh9qkhjsk29csjns901j7jdbqd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

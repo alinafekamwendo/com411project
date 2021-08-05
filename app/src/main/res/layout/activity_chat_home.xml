@@ -1,9 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".chat.ChatHomeActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/goog_blue"
+        android:id="@+id/chat_toolbar_Id">
+<RelativeLayout
+    android:id="@+id/tool_bar_rtvlyout_Id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+    <TextView
+        android:id="@+id/chat_toolbar_headtxt_Id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="kachisi Chat"
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:layout_marginRight="50dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/chat_toolbar_search_Id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_toRightOf="@+id/chat_toolbar_headtxt_Id"
+         />
+
+</RelativeLayout>
+        
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/chat_tablyt_Id"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_below="@+id/chat_toolbar_Id"
+        app:tabTextColor="#77a3a7"
+        app:tabSelectedTextColor="@color/white"
+        app:tabIndicatorHeight="3dp"
+        android:backgroundTint="@color/goog_blue"
+        android:layout_marginTop="0dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/chat_toolbar_chatitem_Id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chats">
+
+        </com.google.android.material.tabs.TabItem>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/chat_toolbar_cellitem_Id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HomeCell">
+
+        </com.google.android.material.tabs.TabItem>
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/chat_viewpager_fragment_container_Id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/chat_tablyt_Id">
+
+    </androidx.viewpager.widget.ViewPager>
+
+</RelativeLayout>

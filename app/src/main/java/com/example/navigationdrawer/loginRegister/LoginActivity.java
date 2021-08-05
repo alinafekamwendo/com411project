@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.navigationdrawer.R;
+import com.example.navigationdrawer.chat.ChatHomeActivity;
 
 public class LoginActivity extends AppCompatActivity {
   Button login;
@@ -20,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    Intent intent =new Intent(LoginActivity.this,RegisterActivity.class);
+                    Intent intent =new Intent(LoginActivity.this, ChatHomeActivity.class);
                     startActivity(intent);
                 }
         });

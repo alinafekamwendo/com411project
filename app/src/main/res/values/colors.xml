@@ -8,4 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="goog_blue">#394BAE</color>
+    <color name="light_blue">#425af5</color>
+    <color name="bright_blue">#2108c7</color>
+    <color name="bright_green">#1f9128</color>
+    <color name="khaki">#94580a</color>
+    <color name="header_color">#075e54</color>
+    <color name="button_blue">#07657d</color>
 </resources>
