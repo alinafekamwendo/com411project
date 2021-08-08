@@ -48,7 +48,7 @@
             app:layout_constraintWidth_percent=".8" />
 
         <Button
-            android:id="@+id/login_buttonID"
+            android:id="@+id/login_loginbuttonID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -81,7 +81,7 @@
             app:layout_constraintVertical_bias="0.23" />
 
         <TextView
-            android:id="@+id/not_memberyetID"
+            android:id="@+id/login_not_memberyetID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -93,7 +93,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/login_buttonID"
+            app:layout_constraintTop_toBottomOf="@+id/login_loginbuttonID"
             app:layout_constraintVertical_bias="0.285" />
 
         <Button
@@ -108,7 +108,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.511"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/not_memberyetID"
+            app:layout_constraintTop_toBottomOf="@+id/login_not_memberyetID"
             app:layout_constraintVertical_bias="0.206" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
