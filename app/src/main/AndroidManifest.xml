@@ -18,10 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NavigationDrawer.NoActionBar">
         <activity
-            android:name=".chat.NumberAunthentication"
+            android:name=".chat.NumberVerification"
             android:exported="true" />
         <activity
-            android:name=".BridgeActivity"
+            android:name=".HomeActivity"
             android:exported="true" />
         <activity
             android:name=".youtubechannel.YoutubeActivity"

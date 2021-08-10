@@ -13,8 +13,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string-array name="planets_array">
+    <string-array name="category_array">
         <item>Member</item>
         <item>Admin</item>
     </string-array>
+
+    <string name="invalid_firstname">first name can not be empty</string>
+    <string name="invalid_surname">sur name can not be empty</string>
+    <string name="invalid_email">Please enter a valid email</string>
+    <string name="invalid_confirm_email">Email is not valid</string>
+    <string name="invalid_password">Please enter a valid password</string>
+    <string name="invalid_confirm_password">Password does not match</string>
+    <string name="invalid_phone">Please enter a valid Phone</string>
+
 </resources>

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -40,17 +41,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signuptxt">
+            app:layout_constraintTop_toBottomOf="@+id/signuptxt"
+            >
 
             <Spinner
-                android:id="@+id/regisrter_spinner_id"
+                android:id="@+id/signup_spinner_id"
                 android:layout_width="149dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:entries="@array/planets_array"
+                android:entries="@array/category_array"
                />
 
             <EditText
@@ -69,12 +71,12 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.6"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/regisrter_spinner_id"
+                app:layout_constraintTop_toBottomOf="@+id/signup_spinner_id"
                 app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintWidth_percent=".8" />
 
             <EditText
-                android:id="@+id/login_surname"
+                android:id="@+id/signup_surname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
@@ -105,9 +107,9 @@
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/login_surname"
-                app:layout_constraintStart_toStartOf="@+id/login_surname"
-                app:layout_constraintTop_toBottomOf="@+id/login_surname"
+                app:layout_constraintEnd_toEndOf="@+id/signup_surname"
+                app:layout_constraintStart_toStartOf="@+id/signup_surname"
+                app:layout_constraintTop_toBottomOf="@+id/signup_surname"
                 app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintWidth_percent=".8" />
 

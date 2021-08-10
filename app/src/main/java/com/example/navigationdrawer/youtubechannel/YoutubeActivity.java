@@ -28,9 +28,11 @@ public class YoutubeActivity extends YouTubeBaseActivity {
         fullscreen=findViewById(R.id.fullscreen_btn);
         youtube_player=findViewById(R.id.youtube_playerID);
 
+
         onInitializedListener=new YouTubePlayer.OnInitializedListener(){
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+
                 youTubePlayer.loadVideo("vUn3TnyQx3o");
 
             }
