@@ -3,9 +3,11 @@ plugins {
     id 'com.google.gms.google-services'
 }
 
+
 android {
     compileSdkVersion 31
     buildToolsVersion "31.0.0"
+
 
     defaultConfig {
         applicationId "com.example.navigationdrawer"
@@ -47,6 +49,7 @@ allprojects {
 
 
 dependencies {
+
 //room
     def room_version = "2.3.0"
     implementation "androidx.room:room-runtime:$room_version"

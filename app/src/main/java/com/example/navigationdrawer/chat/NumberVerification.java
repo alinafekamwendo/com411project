@@ -12,28 +12,33 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.navigationdrawer.R;
+import com.example.navigationdrawer.databinding.ActivityNumberBinding;
 import com.example.navigationdrawer.loginRegister.RegisterActivity;
 import com.google.firebase.FirebaseApp;
 
 public class NumberVerification extends AppCompatActivity {
 
+    ActivityNumberBinding activityNumberBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_number_verification);
+        activityNumberBinding=ActivityNumberBinding.inflate(getLayoutInflater());
+        setContentView(activityNumberBinding.getRoot());
         //initializing firebase
         FirebaseApp.initializeApp(this);
 
-        setFragment();
+        activityNumberBinding.verifyCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(NumberVerification.this,OTP_activity.class);
+                intent.putExtra("phone number",activityNumberBinding.codeNumber.getText().toString());
+                startActivity(intent);
+            }
+        });
 
-    }
 
-    private void setFragment() {
-        NumberFragment numberFragment=new NumberFragment();
-        FragmentManager fragmentManager=getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.fragment_container,numberFragment);
-        fragmentTransaction.commit();
+
+
     }
 
 }

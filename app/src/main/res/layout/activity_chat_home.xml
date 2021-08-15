@@ -74,8 +74,8 @@
         android:id="@+id/chat_viewpager_fragment_container_Id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
-        android:layout_below="@+id/chat_tablyt_Id">
+        android:layout_below="@+id/chat_tablyt_Id"
+        android:layout_marginTop="0dp">
 
     </androidx.viewpager.widget.ViewPager>
 

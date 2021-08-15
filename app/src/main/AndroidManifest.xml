@@ -16,7 +16,25 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo_ic"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NavigationDrawer.NoActionBar">
+        android:theme="@style/Theme.NavigationDrawer.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".people.PeopleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".home.HomeDrawer"
+            android:exported="true"
+            android:label="@string/title_activity_home_drawer"
+            android:theme="@style/Theme.NavigationDrawer.NoActionBar" />
+        <activity
+            android:name=".chat.OTP_activity"
+            android:exported="true" />
+        <activity
+            android:name=".notifications.NotificationsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".chat.RecyclerViewActivity"
+            android:exported="true" />
         <activity
             android:name=".chat.NumberVerification"
             android:exported="true" />

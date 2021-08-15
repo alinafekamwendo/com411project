@@ -34,7 +34,6 @@ public class YoutubeActivity extends YouTubeBaseActivity {
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
 
                 youTubePlayer.loadVideo("vUn3TnyQx3o");
-
             }
 
             @Override
