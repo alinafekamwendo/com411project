@@ -1,9 +1,8 @@
-package com.example.navigationdrawer.chat;
+package com.example.navigationdrawer.people;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,12 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.navigationdrawer.R;
-import com.example.navigationdrawer.notifications.Notification;
-
-import java.util.List;
 
 
-public class RecyclerChatAdapter extends RecyclerView.Adapter<RecyclerChatAdapter.ViewHolder>{
+public class RecyclerPeopleAdapter extends RecyclerView.Adapter<RecyclerPeopleAdapter.ViewHolder>{
 
     @NonNull
     @Override

@@ -5,9 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:id="@+id/homeNavDrawer"
     tools:context=".chat.ChatHomeActivity"
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -19,6 +28,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical">
+
+
+    <ImageView
+        android:id="@+id/chat_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toHome"
+        android:src="@drawable/ic_white_home"
+        android:paddingTop="10dp"
+
+        />
     <TextView
         android:id="@+id/chat_toolbar_headtxt_Id"
         android:layout_width="wrap_content"
@@ -27,8 +47,8 @@
         android:textSize="20dp"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
-        android:layout_marginRight="50dp"
         android:textStyle="bold"
+        android:layout_toRightOf="@+id/chat_menu"
         android:textColor="@color/white"/>
 
     <androidx.appcompat.widget.SearchView
@@ -36,47 +56,60 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
-        android:layout_toRightOf="@+id/chat_toolbar_headtxt_Id"
+        android:layout_toEndOf="@+id/chat_toolbar_headtxt_Id"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentEnd="true"
          />
 
 </RelativeLayout>
         
     </androidx.appcompat.widget.Toolbar>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/chat_tablyt_Id"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_below="@+id/chat_toolbar_Id"
-        app:tabTextColor="#77a3a7"
-        app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorHeight="3dp"
-        android:backgroundTint="@color/goog_blue"
-        android:layout_marginTop="0dp">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/chat_tablyt_Id"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@+id/chat_toolbar_Id"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="@color/goog_blue"
+            app:tabIndicatorHeight="3dp"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="#77a3a7">
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/chat_toolbar_chatitem_Id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Chats">
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/chat_toolbar_chatitem_Id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chats">
 
-        </com.google.android.material.tabs.TabItem>
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/chat_toolbar_cellitem_Id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="HomeCell">
+            </com.google.android.material.tabs.TabItem>
 
-        </com.google.android.material.tabs.TabItem>
-    </com.google.android.material.tabs.TabLayout>
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/chat_toolbar_cellitem_Id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HomeCell">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/chat_viewpager_fragment_container_Id"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/chat_tablyt_Id"
-        android:layout_marginTop="0dp">
+            </com.google.android.material.tabs.TabItem>
+        </com.google.android.material.tabs.TabLayout>
 
-    </androidx.viewpager.widget.ViewPager>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:layout_below="@id/chat_tablyt_Id">
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/chat_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/single_chat_item"
+                    />
+        </FrameLayout>
+
+
+    </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

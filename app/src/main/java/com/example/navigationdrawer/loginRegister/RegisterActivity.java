@@ -14,6 +14,7 @@ import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.example.navigationdrawer.HomeActivity;
 import com.example.navigationdrawer.R;
+import com.example.navigationdrawer.home.HomeDrawer;
 
 public class RegisterActivity extends AppCompatActivity {
         //declaring variables
@@ -44,14 +45,14 @@ public class RegisterActivity extends AppCompatActivity {
         //email
         awesomeValidation.addValidation(RegisterActivity.this,R.id.signup_email,
                 Patterns.EMAIL_ADDRESS,R.string.invalid_email);
-
+        awesomeValidation.addValidation(RegisterActivity.this,R.id.signup_password, RegexTemplate.NOT_EMPTY,R.string.invalid_password);
 
 
         registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                if(awesomeValidation.validate()){
-                Intent intent=new Intent(RegisterActivity.this, HomeActivity.class);
+                Intent intent=new Intent(RegisterActivity.this, HomeDrawer.class);
                 startActivity(intent);}
             }
         });

@@ -34,7 +34,7 @@ public void ClickMenu(View view){
         openDrawer(homeDrawer);
 }
 
-    private void openDrawer(DrawerLayout homeDrawer) {
+    public void openDrawer(DrawerLayout homeDrawer) {
         //open drawer layout
         homeDrawer.openDrawer(GravityCompat.START);
 
@@ -46,7 +46,7 @@ public void ClickMenu(View view){
 
     }
 
-    private void closeDrawer(DrawerLayout homeDrawer) {
+    public void closeDrawer(DrawerLayout homeDrawer) {
         //close the drawer layout
         if(homeDrawer.isDrawerOpen(GravityCompat.START)){
         //This is to check if the drawer is open just to make sure
@@ -63,8 +63,8 @@ public void ClickMenu(View view){
         redirectActivity(this, NotificationsActivity.class);
     }
 
-    private static void redirectActivity(Activity activity,Class clas) {
-        Intent intent=new Intent(activity,clas);
+    public static void redirectActivity(Activity activity,Class aClass) {
+        Intent intent=new Intent(activity,aClass);
 
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
@@ -88,7 +88,7 @@ public void ClickMenu(View view){
         logout(this);
     }
 
-    private static void logout(Activity activity) {
+  public static void logout(Activity activity) {
         AlertDialog.Builder builder =new AlertDialog.Builder(activity);
         builder.setTitle("Logout");
         builder.setMessage("Do you really want to logout?");

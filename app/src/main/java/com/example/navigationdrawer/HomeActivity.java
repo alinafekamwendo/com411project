@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.navigationdrawer.chat.NumberVerification;
-import com.example.navigationdrawer.chat.RecyclerViewActivity;
 import com.example.navigationdrawer.youtubechannel.YoutubeActivity;
 
 public class HomeActivity extends AppCompatActivity {

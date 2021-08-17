@@ -11,20 +11,22 @@ public class Notification {
     public int uniqueId;
  
     @ColumnInfo(name ="title")
-    public String title;
+    private String title;
 
     @ColumnInfo(name = "message")
-    public String message;
+    private String message;
 
     @ColumnInfo(name = "time")
-    public  String time;
+    private  String time;
 
+    public Notification(String title, String message, String time) {
+        this.title = title;
+        this.message = message;
+        this.time = time;
+    }
     //generate setters and getters
 
-    public void setUniqueId(int uniqueId) {
-        this.uniqueId = uniqueId;
-    }
-
+    public void setUniqueId(int uniqueId){this.uniqueId=uniqueId;}
     public void setTitle(String title) {
         this.title = title;
     }
@@ -35,10 +37,6 @@ public class Notification {
 
     public void setTime(String time) {
         this.time = time;
-    }
-
-    public int getUniqueId() {
-        return uniqueId;
     }
 
     public String getTitle() {
