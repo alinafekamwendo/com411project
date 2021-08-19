@@ -1,18 +1,27 @@
 {
   "project_info": {
     "project_number": "819952610094",
+    "firebase_url": "https://kachisiapp-default-rtdb.firebaseio.com",
     "project_id": "kachisiapp",
     "storage_bucket": "kachisiapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:819952610094:android:da7b456a6fb25d61a828bf",
+        "mobilesdk_app_id": "1:819952610094:android:126e1683af8b27d1a828bf",
         "android_client_info": {
           "package_name": "com.example.kachisiapp"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "819952610094-d72dv5dektl462dnbvu6govj77d2hvkm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kachisiapp",
+            "certificate_hash": "7ae181ca159434817c3451f60eca73298da8e251"
+          }
+        },
         {
           "client_id": "819952610094-4tknoqjh9qkhjsk29csjns901j7jdbqd.apps.googleusercontent.com",
           "client_type": 3
