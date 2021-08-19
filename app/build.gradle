@@ -10,7 +10,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.example.navigationdrawer"
+        applicationId "com.example.kachisiapp"
         minSdkVersion 17
         targetSdkVersion 31
         versionCode 1
