@@ -2,7 +2,6 @@ package com.example.kachisiapp.loginRegister;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -61,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         //checking user exixtence in the data base
         if(firebaseAuth.getCurrentUser() !=null){
-          startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+            Toast.makeText(getApplicationContext(), "seems the user exists", Toast.LENGTH_SHORT).show();
            finish();
        }
         registerbtn.setOnClickListener(new View.OnClickListener() {
@@ -70,12 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String email=userEmail.getText().toString();
                 String password=userPassword.getText().toString();
 
-                if(awesomeValidation.validate()){
-                    return;
-                }
-                if(TextUtils.isEmpty(phoneNumber.getText())||(phoneNumber.getTextSize()<10)){
-                    phoneNumber.setError("phone number should not be less than 10");
-                }
+
                 progressBar.setVisibility(View.VISIBLE);
 
                 //registering the user
