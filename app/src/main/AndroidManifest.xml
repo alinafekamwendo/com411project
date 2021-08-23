@@ -11,6 +11,7 @@
     </queries>
 
     <application
+        android:fullBackupOnly="true"
         android:allowBackup="true"
         android:icon="@drawable/logo_ic"
         android:label="@string/app_name"
@@ -18,10 +19,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NavigationDrawer.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".trials.TrialsMain"
-            android:exported="true"
-          />
         <activity
             android:name=".notifications.AddNotification"
             android:exported="true"

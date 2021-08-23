@@ -59,32 +59,35 @@ public class RegisterActivity extends AppCompatActivity {
         awesomeValidation.addValidation(RegisterActivity.this,R.id.signup_password, RegexTemplate.NOT_EMPTY,R.string.invalid_password);
 
         //checking user exixtence in the data base
-        if(firebaseAuth.getCurrentUser() !=null){
-            Toast.makeText(getApplicationContext(), "seems the user exists", Toast.LENGTH_SHORT).show();
-           finish();
-       }
+
         registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email=userEmail.getText().toString();
-                String password=userPassword.getText().toString();
+                String email = userEmail.getText().toString();
+                String password = userPassword.getText().toString();
+
+
+                if (awesomeValidation.validate()) {
 
 
                 progressBar.setVisibility(View.VISIBLE);
 
                 //registering the user
-                firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+
+                        if (task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "user registered succesfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), HomeDrawer.class));
-                        }else{
-                            Toast.makeText(RegisterActivity.this, "Oops!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(RegisterActivity.this, "Oops!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.INVISIBLE);
                         }
                     }
                 });
             }
+        }
 
         });
 
