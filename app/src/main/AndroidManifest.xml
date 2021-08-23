@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="kachisiapp">
+    package="com.example.kachisiapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -19,40 +19,44 @@
         android:theme="@style/Theme.NavigationDrawer.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.example.kachisiapp.notifications.AddNotification"
+            android:name=".trials.TrialsMain"
             android:exported="true"
-            android:parentActivityName="com.example.kachisiapp.notifications.NotificationsActivity"/>
+          />
         <activity
-            android:name="com.example.kachisiapp.people.PeopleActivity"
+            android:name=".notifications.AddNotification"
+            android:exported="true"
+            android:parentActivityName=".notifications.NotificationsActivity" />
+        <activity
+            android:name=".people.PeopleActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.kachisiapp.home.HomeDrawer"
+            android:name=".home.HomeDrawer"
             android:exported="true"
             android:label="@string/title_activity_home_drawer"
             android:theme="@style/Theme.NavigationDrawer.NoActionBar" />
         <activity
-            android:name="com.example.kachisiapp.chat.OTP_activity"
+            android:name=".chat.OTP_activity"
             android:exported="true" />
         <activity
-            android:name="com.example.kachisiapp.notifications.NotificationsActivity"
+            android:name=".notifications.NotificationsActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.kachisiapp.chat.NumberVerification"
+            android:name=".chat.NumberVerification"
             android:exported="true" />
         <activity
-            android:name="com.example.kachisiapp.HomeActivity"
+            android:name=".HomeActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.kachisiapp.youtubechannel.YoutubeActivity"
+            android:name=".youtubechannel.YoutubeActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.kachisiapp.chat.ChatHomeActivity"
+            android:name=".chat.ChatHomeActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.kachisiapp.loginRegister.LoginActivity"
+            android:name=".loginRegister.LoginActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.kachisiapp.LaunchActivity"
+            android:name=".LaunchActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,7 +64,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.kachisiapp.loginRegister.RegisterActivity" />
+        <activity android:name=".loginRegister.RegisterActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

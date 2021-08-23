@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import kachisiapp.R;
+import com.example.kachisiapp.R;
 
 
 public class AddNotification extends AppCompatActivity {

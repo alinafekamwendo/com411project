@@ -6,9 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.kachisiapp.databinding.ActivityNumberBinding;
 import com.google.firebase.FirebaseApp;
-
-import kachisiapp.databinding.ActivityNumberBinding;
 
 public class NumberVerification extends AppCompatActivity {
 

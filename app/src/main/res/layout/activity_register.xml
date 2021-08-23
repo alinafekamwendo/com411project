@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#B0612713"
         tools:context=".loginRegister.RegisterActivity">
 
@@ -16,175 +16,167 @@
             android:id="@+id/signuptxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/allerta"
+            android:gravity="center_horizontal"
             android:text="Kindily fill in below to register as a member"
             android:textColor="#E6D8D8"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.051" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/signup_constraintLayout"
+        <RelativeLayout
+            android:id="@+id/signup_linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
             android:background="@drawable/buttons_general"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/signup_progressBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signuptxt"
-            >
+            app:layout_constraintTop_toBottomOf="@+id/signuptxt">
 
             <Spinner
                 android:id="@+id/signup_spinner_id"
                 android:layout_width="149dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="category"
                 android:entries="@array/category_array"
-               />
+                android:layout_centerHorizontal="true"/>
 
             <EditText
                 android:id="@+id/signup_firstname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_marginBottom="44dp"
+                android:layout_below="@id/signup_spinner_id"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/buttons_general"
                 android:drawablePadding="20dp"
                 android:hint="enter firstname"
-                android:paddingLeft="15dp"
-                android:paddingTop="15dp"
-                android:paddingBottom="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/signup_spinner_id"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintWidth_percent=".8" />
+                android:inputType="text"
+               android:padding="15dp" />
 
             <EditText
                 android:id="@+id/signup_surname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:layout_margin="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/buttons_general"
                 android:drawablePadding="20dp"
                 android:hint="enter surname"
-                android:paddingLeft="15dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/signup_firstname"
-                app:layout_constraintStart_toStartOf="@+id/signup_firstname"
-                app:layout_constraintTop_toBottomOf="@+id/signup_firstname"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintWidth_percent=".8" />
+               android:padding="15dp"
+                android:layout_below="@id/signup_firstname"/>
+
+            <EditText
+                android:id="@+id/signup_phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/signup_surname"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/buttons_general"
+                android:drawablePadding="20dp"
+                android:hint="enter phone number"
+                android:inputType="phone"
+                android:padding="15dp"
+                />
+
 
             <EditText
                 android:id="@+id/signup_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:layout_margin="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/buttons_general"
                 android:drawablePadding="20dp"
                 android:hint="enter email"
-                android:paddingLeft="15dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/signup_surname"
-                app:layout_constraintStart_toStartOf="@+id/signup_surname"
-                app:layout_constraintTop_toBottomOf="@+id/signup_surname"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintWidth_percent=".8" />
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@id/signup_phoneNumber"/>
 
             <EditText
                 android:id="@+id/signup_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:layout_margin="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/buttons_general"
                 android:drawablePadding="20dp"
                 android:hint="password"
-                android:paddingLeft="15dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/signup_email"
-                app:layout_constraintStart_toStartOf="@+id/signup_email"
-                app:layout_constraintTop_toBottomOf="@+id/signup_email"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintWidth_percent=".8" />
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@id/signup_email"/>
+
             <Button
                 android:id="@+id/signup_register_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_below="@id/signup_password"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 android:drawablePadding="20dp"
-                android:text="Register now"
-              android:layout_margin="20dp"
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.634"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/signup_password"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintWidth_percent=".8" />
+                android:text="Register now" />
 
             <TextView
                 android:id="@+id/signup_alreadytxt"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="already have an account?"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/signup_register_button"
-                app:layout_constraintVertical_bias="0.134" />
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@id/signup_register_button"
+             />
 
             <Button
                 android:id="@+id/register_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="16dp"
                 android:drawablePadding="20dp"
-                android:text="login"
                 android:paddingLeft="15dp"
-                android:layout_margin="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.634"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/signup_alreadytxt"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintWidth_percent=".8" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:text="login"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@id/signup_alreadytxt"/>
+            <ProgressBar
+                android:id="@+id/signup_progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_below="@id/register_login"
+              />
 
+        </RelativeLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

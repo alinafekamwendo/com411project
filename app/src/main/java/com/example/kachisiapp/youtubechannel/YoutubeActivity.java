@@ -12,7 +12,7 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayer.OnInitializedListener;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-import kachisiapp.R;
+import com.example.kachisiapp.R;
 
 public class YoutubeActivity extends YouTubeBaseActivity {
 

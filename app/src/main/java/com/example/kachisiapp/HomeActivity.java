@@ -10,8 +10,6 @@ import androidx.cardview.widget.CardView;
 import com.example.kachisiapp.chat.NumberVerification;
 import com.example.kachisiapp.youtubechannel.YoutubeActivity;
 
-import kachisiapp.R;
-
 public class HomeActivity extends AppCompatActivity {
     CardView to_live,to_chat;
 

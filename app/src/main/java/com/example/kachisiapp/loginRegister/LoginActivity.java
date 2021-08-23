@@ -7,8 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import kachisiapp.R;
-
+import com.example.kachisiapp.R;
 
 public class LoginActivity extends AppCompatActivity {
   Button login_to_registerbtn;
@@ -26,8 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         login_to_registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    Intent intent =new Intent(LoginActivity.this, RegisterActivity.class);
-                    startActivity(intent);
+            startActivity(new Intent(getApplicationContext(),RegisterActivity.class));
                 }
         });
 

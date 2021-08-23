@@ -7,6 +7,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.kachisiapp.R;
+import com.example.kachisiapp.databinding.ActivityOtpBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -17,9 +19,6 @@ import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
-
-import kachisiapp.R;
-import kachisiapp.databinding.ActivityOtpBinding;
 
 public class OTP_activity extends AppCompatActivity {
     ActivityOtpBinding activityOtpBinding;

@@ -8,10 +8,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kachisiapp.R;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import kachisiapp.R;
 
 public class RecyclerNotificationAdapter extends RecyclerView.Adapter<RecyclerNotificationAdapter.NotificationViewHolder> {
 

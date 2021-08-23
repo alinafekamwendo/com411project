@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kachisiapp.loginRegister.LoginActivity;
 
-import kachisiapp.R;
-
 public class LaunchActivity extends AppCompatActivity {
 
     @Override

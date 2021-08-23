@@ -11,12 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.kachisiapp.R;
 import com.example.kachisiapp.chat.ChatHomeActivity;
 import com.example.kachisiapp.notifications.NotificationsActivity;
 import com.example.kachisiapp.people.PeopleActivity;
 import com.example.kachisiapp.youtubechannel.YoutubeActivity;
-
-import kachisiapp.R;
 
 public class HomeDrawer extends AppCompatActivity {
 

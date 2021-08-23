@@ -10,10 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.kachisiapp.R;
 import com.example.kachisiapp.home.HomeDrawer;
 import com.google.android.material.tabs.TabLayout;
-
-import kachisiapp.R;
 
 public class ChatHomeActivity extends AppCompatActivity {
 

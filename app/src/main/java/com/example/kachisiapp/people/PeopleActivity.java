@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kachisiapp.home.HomeDrawer;
 
-import kachisiapp.R;
+import com.example.kachisiapp.R;
 
 public class PeopleActivity extends AppCompatActivity {
     RecyclerPeopleAdapter recyclerPeopleAdapter;
