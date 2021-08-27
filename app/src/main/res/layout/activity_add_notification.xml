@@ -28,11 +28,12 @@
     <EditText
         android:id="@+id/add_message"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="100dp"
         android:layout_below="@id/add_title"
         android:layout_marginTop="10dp"
         android:background="@drawable/buttons_general"
-        android:padding="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:hint="type the notification message here e.g meeting tomorrow" />
     <EditText
         android:layout_width="wrap_content"

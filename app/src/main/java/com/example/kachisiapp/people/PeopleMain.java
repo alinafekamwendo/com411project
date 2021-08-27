@@ -1,4 +1,4 @@
-package com.example.kachisiapp.trials;
+package com.example.kachisiapp.people;
 
 import android.os.Bundle;
 
@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kachisiapp.R;
 
-public class TrialsMain extends AppCompatActivity {
+public class PeopleMain extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trials_main);
+        setContentView(R.layout.activity_people_main);
     }
 }

@@ -25,11 +25,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        android:backgroundTint="#A89E9E"
+        android:backgroundTint="#DFD1D1"
         android:minHeight="?attr/actionBarSize">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
@@ -41,36 +41,40 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:onClick="toHome"
-                android:src="@drawable/icon_back" />
+                android:src="@drawable/ic_back_32dp" />
 
-            <ImageView
-                android:id="@+id/notification_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:onClick="toHome"
-                android:src="@drawable/ic_menu_home" />
-            <RelativeLayout
-                android:layout_marginLeft="200dp"
+            <androidx.cardview.widget.CardView
+                android:layout_gravity="end"
+                android:id="@+id/notification_deleteCardV"
+                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:orientation="vertical"
                 >
-                <ImageView
-                    android:id="@+id/delete_all"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_chat_delete_all"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/delete_all"
-                    android:text="delete all"
-                 />
-            </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="#DFD1D1"
+                   >
+                    <ImageView
+                        android:id="@+id/delete_all"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_chat_delete_all"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/delete_all"
+                        android:text="delete all"
+                        android:textStyle="bold"
+                        android:textColor="#E40E0E"
+                        />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>
@@ -82,9 +86,10 @@
         android:id="@+id/notification_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
+       android:layout_below="@id/toolbar"
         android:layout_marginTop="0dp"
-        android:background="@color/teal_700"
+        android:background="#AEB5B5"
+        android:backgroundTint="@color/white"
         tools:listitem="@layout/single_notification_item">
 
     </androidx.recyclerview.widget.RecyclerView>

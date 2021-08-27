@@ -25,7 +25,7 @@ public class NotificationVModel extends AndroidViewModel {
         notificationRepository.update(notification);
     }
     public  void delete(Notification notification){
-        notificationRepository.delete(notification);
+       notificationRepository.delete(notification);
     }
     public void deleteAll(){
         notificationRepository.deleteAllNotifications();

@@ -1,58 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout2"
+    android:id="@+id/notification_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="7dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginLeft="10dp"
-    android:background="@drawable/buttons_general"
- >
+    app:cardElevation="10dp"
+    android:background="#F4F0F0">
 
-
-    <TextView
-        android:id="@+id/notification_title"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-      android:layout_centerHorizontal="true"
-        android:layout_marginRight="30dp"
-        android:text="title"
-        android:textColor="@color/black"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/notification_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="49dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginBottom="10dp"
-        android:text="time"
-        android:layout_marginRight="15dp"
-        android:textColor="@color/bright_green"
-        android:layout_below="@id/notification_title"
-        android:layout_alignParentRight="true"/>
+        android:layout_marginBottom="7dp"
+        android:background="#FFFFFF"
+        >
 
 
-    <TextView
-        android:id="@+id/notification_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="44dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:layout_alignParentLeft="true"
-        android:text="message"
-        android:textColor="#00BCD4"
-        android:textSize="15dp"
-        android:layout_toLeftOf="@id/notification_time"
-        android:ellipsize="end"/>
+        <TextView
+            android:id="@+id/notification_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="30dp"
+            android:text="title"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/notification_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="49dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="time"
+            android:textSize="20dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/bright_green"
+            android:layout_below="@id/notification_message"
+            android:layout_alignParentRight="true"
+            />
 
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/notification_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_alignParentLeft="true"
+            android:text="message"
+            android:textColor="#16288C"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:textSize="15dp"
+            android:layout_toLeftOf="@id/notification_time"
+            />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

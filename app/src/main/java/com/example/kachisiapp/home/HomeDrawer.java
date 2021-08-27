@@ -83,15 +83,15 @@ public void ClickMenu(View view){
         redirectActivity(this, YoutubeActivity.class);
     }
 
-    public void ClickLogout(View view) {
+    public void ClickExit(View view) {
         //close 
-        logout(this);
+        exit(this);
     }
 
-  public static void logout(Activity activity) {
+  public static void exit(Activity activity) {
         AlertDialog.Builder builder =new AlertDialog.Builder(activity);
-        builder.setTitle("Logout");
-        builder.setMessage("Do you really want to logout?");
+        builder.setTitle("Exit");
+        builder.setMessage("Do you really want to exit?");
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

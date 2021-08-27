@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/2/drawable/ic_baseline_notifications.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/2/drawable/ic_baseline_people.xml" value="0.12777777777777777" />
+        <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/2/drawable/ic_menu_notification.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/drawable-v21/ic_menu_camera.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/drawable-v21/ic_menu_gallery.xml" value="0.2351851851851852" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/drawable-v21/ic_menu_slideshow.xml" value="0.2351851851851852" />
@@ -24,9 +26,9 @@
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/activity_home_drawer.xml" value="0.16" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/activity_launch.xml" value="0.23177083333333334" />
-        <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/activity_login.xml" value="0.176" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/activity_notifications.xml" value="0.176" />
+        <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/activity_notifications.xml" value="0.264" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/activity_number.xml" value="0.264" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/activity_number_aunthentication.xml" value="0.1" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/activity_number_verification.xml" value="0.25" />
@@ -53,6 +55,7 @@
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/menu/activity_main_drawer.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/menu/home_drawer.xml" value="0.25" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/menu/main.xml" value="0.2101851851851852" />
+        <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/menu/menu_delete.xml" value="0.25" />
         <entry key="..\:/Users/KINGTECK MALAWI/AndroidStudioProjects/NavigationDrawer/app/src/main/res/xml/hello.xml" value="0.24635416666666668" />
       </map>
     </option>
@@ -66,7 +69,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.176" />
+        <option name="scale" value="0.264" />
       </ProjectState>
     </option>
   </component>

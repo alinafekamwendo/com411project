@@ -55,7 +55,7 @@ public void update(Notification notification){
             return null;
         }
     }
-    private static  class DeleteAllNotificationAsyncTask extends AsyncTask<Void,Void,Void>{
+   private static  class DeleteAllNotificationAsyncTask extends AsyncTask<Void,Void,Void>{
         private NotificationDAO notificationDAO;
         private DeleteAllNotificationAsyncTask(NotificationDAO notificationDAO){
             this.notificationDAO=notificationDAO;

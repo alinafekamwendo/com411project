@@ -2,7 +2,8 @@ package com.example.kachisiapp.loginRegister;
 
 public class RegisteredUsers {
 
-    public String firstname,
+    private String firstname,
+            phoneNumber,
             surname,
             email,
             password;
@@ -15,6 +16,22 @@ public class RegisteredUsers {
         this.surname=surname;
         this.email=email;
         this.password=password;
+    }
+
+    public RegisteredUsers(String firstname, String phoneNumber, String surname, String email, String password) {
+        this.firstname = firstname;
+        this.phoneNumber = phoneNumber;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public void setEmail(String email) {

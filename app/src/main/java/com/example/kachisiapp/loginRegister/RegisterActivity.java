@@ -48,18 +48,28 @@ public class RegisterActivity extends AppCompatActivity {
         firebaseAuth=FirebaseAuth.getInstance();
         //initializing validation style from awesome validation
         awesomeValidation=new AwesomeValidation(ValidationStyle.BASIC);
+
         //validations
         //for userFirstname
         awesomeValidation.addValidation(RegisterActivity.this,R.id.signup_firstname, RegexTemplate.NOT_EMPTY,R.string.invalid_firstname);
         //for surname
         awesomeValidation.addValidation(RegisterActivity.this,R.id.signup_surname, RegexTemplate.NOT_EMPTY,R.string.invalid_surname);
+        //for phone number
+        awesomeValidation.addValidation(RegisterActivity.this,R.id.signup_phoneNumber, "^[+]?[0-9]{10,13}$", R.string.invalid_phone);
         //userEmail
         awesomeValidation.addValidation(RegisterActivity.this,R.id.signup_email,
                 Patterns.EMAIL_ADDRESS,R.string.invalid_email);
         awesomeValidation.addValidation(RegisterActivity.this,R.id.signup_password, RegexTemplate.NOT_EMPTY,R.string.invalid_password);
 
-        //checking user exixtence in the data base
+        //clicking login button in case user exists should take him to the login window
+      loginbtn.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+          }
+      });
 
+        //clicking register button will register email and the given password in firebase
         registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,7 +91,8 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(RegisterActivity.this, "user registered succesfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), HomeDrawer.class));
                         } else {
-                            Toast.makeText(RegisterActivity.this, "Oops!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Oops! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            //closing progressbar
                             progressBar.setVisibility(View.INVISIBLE);
                         }
                     }

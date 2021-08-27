@@ -17,6 +17,7 @@ public class RecyclerNotificationAdapter extends RecyclerView.Adapter<RecyclerNo
 
     private List<Notification> notifications=new ArrayList<>();
 
+
     @NonNull
     @Override
     public NotificationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,11 +33,16 @@ public class RecyclerNotificationAdapter extends RecyclerView.Adapter<RecyclerNo
         holder.textTitle.setText(currentNotification.getTitle());
         holder.timeText.setText(currentNotification.getTime());
         holder.messageText.setText(currentNotification.getMessage());
+
     }
 
     @Override
     public int getItemCount() {
         return notifications.size();
+    }
+    //get position
+    public Notification getNotificationPos(int position){
+        return notifications.get(position);
     }
     public void setNotifications(List<Notification> notifications){
         this.notifications=notifications;
@@ -52,4 +58,8 @@ public class RecyclerNotificationAdapter extends RecyclerView.Adapter<RecyclerNo
         messageText=itemView.findViewById(R.id.notification_message);
     }
 }
+
+
+
+
 }

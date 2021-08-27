@@ -11,8 +11,8 @@
     </queries>
 
     <application
-        android:fullBackupOnly="true"
         android:allowBackup="true"
+        android:fullBackupOnly="true"
         android:icon="@drawable/logo_ic"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo_ic"
@@ -20,9 +20,12 @@
         android:theme="@style/Theme.NavigationDrawer.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".people.PeopleMain"
+            android:exported="true" />
+        <activity
             android:name=".notifications.AddNotification"
             android:exported="true"
-            android:parentActivityName=".notifications.NotificationsActivity" />
+         />
         <activity
             android:name=".people.PeopleActivity"
             android:exported="true" />

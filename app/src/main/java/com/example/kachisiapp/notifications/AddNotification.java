@@ -57,5 +57,4 @@ public class AddNotification extends AppCompatActivity {
         setResult(RESULT_OK,notificationDetails);
         finish();
     }
-
 }
