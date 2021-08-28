@@ -6,7 +6,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.kachisiapp.home.HomeDrawer;
+import com.example.kachisiapp.loginRegister.LoginActivity;
 
 public class LaunchActivity extends AppCompatActivity {
 
@@ -19,11 +19,12 @@ public class LaunchActivity extends AppCompatActivity {
             public void run() {
                 //This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(LaunchActivity.this, HomeDrawer.class);
+                Intent i = new Intent(LaunchActivity.this, LoginActivity.class);
                 startActivity(i);
                 // close this activity
                 finish();
             }
         }, 1000);
     }
+
 }
