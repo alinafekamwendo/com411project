@@ -40,8 +40,8 @@ public class RecyclerPeopleAdapter extends RecyclerView.Adapter<RecyclerPeopleAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Member member= membersList.get(position);
-
-        holder.userName.setText(member.firstname);
+       //String fullName=member.firstname.toString()+" "+member.surname.toString();
+        holder.userName.setText(member.getFirstname());
         holder.userPhone.setText(member.phoneNumber);
         holder.userCategory.setText(member.category);
 

@@ -4,7 +4,7 @@ public class Member {
 
     public int id;
 
-     String surname,firstname;
+     private String surname,firstname;
      int age;
     String phoneNumber,category,email,password;
 
