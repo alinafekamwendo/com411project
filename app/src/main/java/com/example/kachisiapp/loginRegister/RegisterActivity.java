@@ -119,6 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
                             member.put("email",email);
                             member.put("phoneNumber",phone);
                             member.put("category",memberCategory);
+                            member.put("password",password);
                             registeredUsers.set(member).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {

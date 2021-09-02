@@ -1,130 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LaunchActivity">
 
-<ImageView
-    android:id="@+id/loginLogo_imageviewID"
-    android:layout_width="wrap_content"
-    android:layout_height="0dp"
-    android:src="@drawable/loginlogo"
-    app:layout_constraintHeight_percent=".30"
-    android:scaleType="centerCrop"
-    app:layout_constraintVertical_bias="0"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    />
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/inner_constraint"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    app:layout_constraintHeight_percent=".74"
-    app:layout_constraintVertical_bias="1"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    android:background="@color/white"
-   >
-
 
     <TextView
-        android:id="@+id/verse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:text="John 3:16"
-        android:textColor="#1EAA41"
+        android:layout_centerInParent="true"
+        android:text="TERBENACLE"
+        android:fontFamily="@font/aclonica"
         android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26" />
-
-    <TextView
-        android:id="@+id/verse_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:text="---For God so loved the world--"
-        android:textColor="#0B0312"
-        android:textSize="30sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verse" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="150dp"
-        android:layout_height="5dp"
-        android:layout_marginStart="28dp"
-        android:backgroundTint="@color/bright_green"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verse_content"
-        app:layout_constraintVertical_bias="0.494"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="5dp"
-        android:backgroundTint="@color/bright_green"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/verse_content"
-        app:layout_constraintVertical_bias="0.478"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toTopOf="@+id/inner_constraint"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="@+id/loginLogo_imageviewID"
-    >
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="3dp"
-        app:backgroundTint="#CFC6C6"
-        android:layout_marginRight="10dp"
-        android:paddingLeft="10dp"
-        android:clickable="false"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:text="KACHISI"
-        android:textColor="#FAF6F6"
-        android:textSize="48sp"
         android:textStyle="bold" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="3dp"
-        app:backgroundTint="#CFC6C6"
-        android:clickable="false"
-        android:layout_marginLeft="10dp"
-        android:paddingRight="10dp"/>
-</LinearLayout>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

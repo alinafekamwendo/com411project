@@ -1,19 +1,22 @@
-package com.example.kachisiapp.people;
+package com.example.kachisiapp.chat;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kachisiapp.R;
-import com.example.kachisiapp.home.HomeDrawer;
+import com.example.kachisiapp.people.Member;
+import com.example.kachisiapp.people.RecyclerPeopleAdapter;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,33 +27,51 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PeopleActivity extends AppCompatActivity {
-    RecyclerPeopleAdapter mrecyclerPeopleAdapter;
+
+public class MembersFragment extends Fragment {
+
     RecyclerView recyclerView;
+    RecyclerPeopleAdapter recyclerPeopleAdapter;
+    FirebaseFirestore firebaseFirestore;
+    RecyclerPeopleAdapter mrecyclerPeopleAdapter;
     Context context;
     List<Member> members;
-    FirebaseFirestore firebaseFirestore;
     ProgressDialog progressDialog;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_people);
-        firebaseFirestore=FirebaseFirestore.getInstance();
-        members=new ArrayList<Member>();
-        recyclerView=findViewById(R.id.people_recycler);
-        mrecyclerPeopleAdapter = new RecyclerPeopleAdapter(PeopleActivity.this,members);
-        recyclerView.setAdapter(mrecyclerPeopleAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-         progressDialog=new ProgressDialog(this);
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view=inflater.inflate(R.layout.fragment_members, container, false);
+
+        //initialising variables
+        recyclerView=view.findViewById(R.id.membersFragment_recyclerView);
+        List<Member> members=new ArrayList<>();
+        //firestore instance
+        firebaseFirestore=FirebaseFirestore.getInstance();
+
+        //adapter
+        recyclerPeopleAdapter= new RecyclerPeopleAdapter(getActivity(),members);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(mrecyclerPeopleAdapter);
+
+        progressDialog=new ProgressDialog(getActivity());
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading......");
         readFromDB();
-    }
 
-    public void goHome(View view) {
-        Intent intent=new Intent(PeopleActivity.this, HomeDrawer.class);
-        startActivity(intent);
+
+        return view;
+
+
+
 
     }
     private void  readFromDB(){
@@ -59,7 +80,7 @@ public class PeopleActivity extends AppCompatActivity {
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if(error !=null){
                     progressDialog.dismiss();
-                    Toast.makeText(PeopleActivity.this, "Oops! "+error.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Oops! "+error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
                 for (DocumentChange updatedList:value.getDocumentChanges()){
                     if(updatedList.getType()==DocumentChange.Type.ADDED){
@@ -70,4 +91,5 @@ public class PeopleActivity extends AppCompatActivity {
             }
         });
     }
+
 }

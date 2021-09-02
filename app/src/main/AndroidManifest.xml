@@ -35,13 +35,7 @@
             android:label="@string/title_activity_home_drawer"
             android:theme="@style/Theme.NavigationDrawer.NoActionBar" />
         <activity
-            android:name=".chat.OTP_activity"
-            android:exported="true" />
-        <activity
             android:name=".notifications.NotificationsActivity"
-            android:exported="true" />
-        <activity
-            android:name=".chat.NumberVerification"
             android:exported="true" />
         <activity
             android:name=".HomeActivity"

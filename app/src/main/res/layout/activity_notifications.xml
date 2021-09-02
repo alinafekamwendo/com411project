@@ -43,39 +43,6 @@
                 android:onClick="toHome"
                 android:src="@drawable/ic_back_32dp" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_gravity="end"
-                android:id="@+id/notification_deleteCardV"
-                android:layout_marginLeft="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:orientation="vertical"
-                >
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:background="#DFD1D1"
-                   >
-                    <ImageView
-                        android:id="@+id/delete_all"
-                        android:layout_centerHorizontal="true"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_chat_delete_all"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/delete_all"
-                        android:text="delete all"
-                        android:textStyle="bold"
-                        android:textColor="#E40E0E"
-                        />
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
 
         </LinearLayout>
 

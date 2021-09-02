@@ -1,28 +1,40 @@
 package com.example.kachisiapp.people;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+public class Member {
 
-@Entity(tableName = "person_table")
-public class Person {
-    @PrimaryKey(autoGenerate = true)
     public int id;
 
-    private String firstname;
-    private String surname;
-    private int age;
-    String phoneNumber,category;
+     String surname,firstname;
+     int age;
+    String phoneNumber,category,email,password;
 
-    public Person() {
+    public Member() {
     }
 
-    public Person(String firstname, String surname, String phoneNumber, String category) {
+    public Member(String category,String email,String firstname,String password,String phoneNumber,String surname) {
         this.firstname = firstname;
         this.surname = surname;
         this.phoneNumber = phoneNumber;
         this.category = category;
+        this.password=password;
+        this.email=email;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getPhoneNumber() {
         return phoneNumber;

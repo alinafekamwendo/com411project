@@ -3,8 +3,6 @@ package com.example.kachisiapp.notifications;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -13,8 +11,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -28,9 +26,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 
 public class NotificationsActivity extends AppCompatActivity {
+
+    private RecyclerNotificationAdapter recyclerNotificationAdapter;
     private NotificationVModel notificationVModel;
     FloatingActionButton notificationFloatingButton;
-    CardView cardView;
     Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +37,45 @@ public class NotificationsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notifications);
         notificationFloatingButton=findViewById(R.id.floatingActionButton);
         toolbar=findViewById(R.id.toolbar);
-       // cardView=findViewById(R.id.notification_deleteCardV);
 
         toolbar.inflateMenu(R.menu.menu_delete);
+
+        //working with menu
+
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+
+
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                switch(item.getItemId()){
+                    case R.id.menu_deleteAll:
+                        notificationVModel.deleteAll();
+                        Toast.makeText(NotificationsActivity.this, "All notifications deleted", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.menu_search:
+                       SearchView searchView= (SearchView) item.getActionView();
+                       searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                            @Override
+                            public boolean onQueryTextSubmit(String query) {
+                                return false;
+                            }
+
+                            @Override
+                            public boolean onQueryTextChange(String newText) {
+                                recyclerNotificationAdapter.getFilter().filter(newText.toString().toLowerCase());
+                                return false;
+                            }
+                        });
+                }
+
+                return true;
+            }
+
+        });
+
+
 
         ActivityResultLauncher<Intent> intentLauncher =registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -100,35 +135,14 @@ public class NotificationsActivity extends AppCompatActivity {
         Intent intent=new Intent(NotificationsActivity.this,HomeDrawer.class);
         startActivity(intent);
     }
+    //outside oncreate create menu
 
     public void toAddNotification(View view) {
         Intent intent=new Intent(NotificationsActivity.this,AddNotification.class);
         startActivity(intent);
     }
-    //outside oncreate create menu
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater=getMenuInflater();
-        menuInflater.inflate(R.menu.menu_delete,menu);
-        return true;
-        //return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menu_deleteAll:
-                notificationVModel.deleteAll();
-                Toast.makeText(this, "all notifications deleted", Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-
-                return super.onOptionsItemSelected(item);
-
-        }
-    }
 }
 
 

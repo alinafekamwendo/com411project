@@ -138,6 +138,7 @@
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
+                android:backgroundTint="@color/button_blue"
                 android:text="Register now" />
 
             <TextView
@@ -166,6 +167,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/button_blue"
                 android:layout_below="@id/signup_alreadytxt"/>
             <ProgressBar
                 android:id="@+id/signup_progressBar"

@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.example.kachisiapp.chat.NumberVerification;
+import com.example.kachisiapp.chat.ChatHomeActivity;
 import com.example.kachisiapp.youtubechannel.YoutubeActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
         to_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              Intent intent=new Intent(getApplicationContext(), NumberVerification.class);
+              Intent intent=new Intent(getApplicationContext(), ChatHomeActivity.class);
               startActivity(intent);
             }
         });

@@ -26,11 +26,12 @@ public void update(Notification notification){
         new DeleteNotificationAsyncTask(notificationDAO).execute(notification);
     }
     public void deleteAllNotifications(){
-        new DeleteNotificationAsyncTask(notificationDAO).execute();
+        new DeleteAllNotificationAsyncTask(notificationDAO).execute();
     }
     public LiveData<List<Notification>> getAllNotifications(){
         return allNotifications;
     }
+    
     private static  class InsertNotificationAsyncTask extends AsyncTask<Notification,Void,Void>{
             private NotificationDAO notificationDAO;
             private InsertNotificationAsyncTask(NotificationDAO notificationDAO){
@@ -55,15 +56,15 @@ public void update(Notification notification){
             return null;
         }
     }
-   private static  class DeleteAllNotificationAsyncTask extends AsyncTask<Void,Void,Void>{
-        private NotificationDAO notificationDAO;
-        private DeleteAllNotificationAsyncTask(NotificationDAO notificationDAO){
-            this.notificationDAO=notificationDAO;
+    private static  class DeleteAllNotificationAsyncTask extends AsyncTask<Void,Void,Void>{
+        private NotificationDAO notificationdao;
+         DeleteAllNotificationAsyncTask(NotificationDAO notificationDAO){
+            this.notificationdao =notificationDAO;
         }
 
         @Override
         protected Void doInBackground(Void... voids) {
-            notificationDAO.deleteAllNotifications();
+            notificationdao.deleteAllNotifications();
             return null;
         }
     }

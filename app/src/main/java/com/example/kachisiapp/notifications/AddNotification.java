@@ -1,12 +1,17 @@
 package com.example.kachisiapp.notifications;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.icu.util.Calendar;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kachisiapp.R;
@@ -28,12 +33,38 @@ public class AddNotification extends AppCompatActivity {
         message = findViewById(R.id.add_message);
         saveBtn=findViewById(R.id.add_save);
 
-        //saveBtn.setOnClickListener(new View.OnClickListener() {
-           // @Override
-          //  public void onClick(View view) {
-          //     saveNotification(view);
-          //  }
-       // });
+        time.setOnClickListener(new View.OnClickListener() {
+
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Calendar selectedTime = Calendar.getInstance();
+                int hour = selectedTime.get(Calendar.HOUR_OF_DAY);
+                int minute = selectedTime.get(Calendar.MINUTE);
+
+                TimePickerDialog mTimePicker;
+                mTimePicker = new TimePickerDialog(AddNotification.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        if(selectedHour>=12){
+                          String  status="PM";
+                        time.setText( selectedHour + ":" + selectedMinute+" "+status);
+                        }
+                        if(selectedHour<12){
+                            String status="AM";
+                            time.setText( selectedHour + ":" + selectedMinute+" "+status);
+                        }
+
+                    }
+                }, hour, minute, false);
+                mTimePicker.setTitle("set event time");
+                mTimePicker.show();
+
+            }
+        });
+
+
     }
 
     public void toNotifications(View view) {
