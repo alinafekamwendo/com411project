@@ -1,5 +1,6 @@
 package com.example.kachisiapp.people;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,20 +8,20 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kachisiapp.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class RecyclerPeopleAdapter extends RecyclerView.Adapter<RecyclerPeopleAdapter.ViewHolder>{
 
-    List<Member> membersList;
+    List<Member> membersList =new ArrayList<>();
     Context context;
 
-    public RecyclerPeopleAdapter(FragmentActivity activity, List<Member> members) {
+    public RecyclerPeopleAdapter(Activity activity, List<Member> members) {
         this.context=activity;
         this.membersList=members;
     }
@@ -40,9 +41,9 @@ public class RecyclerPeopleAdapter extends RecyclerView.Adapter<RecyclerPeopleAd
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Member member= membersList.get(position);
 
-        holder.userName.setText(member.getFirstname());
-        holder.userPhone.setText(member.getFirstname());
-        holder.userCategory.setText(member.getCategory());
+        holder.userName.setText(member.firstname);
+        holder.userPhone.setText(member.phoneNumber);
+        holder.userCategory.setText(member.category);
 
     }
 

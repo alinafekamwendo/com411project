@@ -31,9 +31,8 @@ import java.util.List;
 public class MembersFragment extends Fragment {
 
     RecyclerView recyclerView;
-    RecyclerPeopleAdapter recyclerPeopleAdapter;
-    FirebaseFirestore firebaseFirestore;
     RecyclerPeopleAdapter mrecyclerPeopleAdapter;
+    FirebaseFirestore firebaseFirestore;
     Context context;
     List<Member> members;
     ProgressDialog progressDialog;
@@ -52,12 +51,12 @@ public class MembersFragment extends Fragment {
 
         //initialising variables
         recyclerView=view.findViewById(R.id.membersFragment_recyclerView);
-        List<Member> members=new ArrayList<>();
+        members=new ArrayList<Member>();
         //firestore instance
         firebaseFirestore=FirebaseFirestore.getInstance();
 
         //adapter
-        recyclerPeopleAdapter= new RecyclerPeopleAdapter(getActivity(),members);
+        mrecyclerPeopleAdapter= new RecyclerPeopleAdapter(getActivity(),members);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(mrecyclerPeopleAdapter);
@@ -65,7 +64,7 @@ public class MembersFragment extends Fragment {
         progressDialog=new ProgressDialog(getActivity());
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading......");
-        readFromDB();
+        EventChangeListener();
 
 
         return view;
@@ -74,22 +73,24 @@ public class MembersFragment extends Fragment {
 
 
     }
-    private void  readFromDB(){
-        firebaseFirestore.collection("members").orderBy("firsname", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                if(error !=null){
-                    progressDialog.dismiss();
-                    Toast.makeText(getActivity(), "Oops! "+error.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-                for (DocumentChange updatedList:value.getDocumentChanges()){
-                    if(updatedList.getType()==DocumentChange.Type.ADDED){
-                        members.add(updatedList.getDocument().toObject(Member.class));
+    private void EventChangeListener(){
+        firebaseFirestore.collection("members").orderBy("firstname", Query.Direction.ASCENDING)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if(error !=null){
+                            if(progressDialog.isShowing()){
+                                progressDialog.dismiss();}
+                            Toast.makeText(getActivity(), "Oops! "+error.getMessage(), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        for (DocumentChange updatedList : value.getDocumentChanges()){
+                            if(updatedList.getType()==DocumentChange.Type.ADDED){
+                                members.add(updatedList.getDocument().toObject(Member.class));
+                            }
+                            mrecyclerPeopleAdapter.notifyDataSetChanged();
+                        }
                     }
-                    mrecyclerPeopleAdapter.notifyDataSetChanged();
-                }
-            }
-        });
+                });
     }
-
 }

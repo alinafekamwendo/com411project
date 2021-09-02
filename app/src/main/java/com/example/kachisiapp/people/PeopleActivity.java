@@ -29,13 +29,13 @@ public class PeopleActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Context context;
     List<Member> members;
-    FirebaseFirestore firebaseFirestore;
+    FirebaseFirestore mfirebaseFirestore;
     ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_people);
-        firebaseFirestore=FirebaseFirestore.getInstance();
+        mfirebaseFirestore =FirebaseFirestore.getInstance();
         members=new ArrayList<Member>();
         recyclerView=findViewById(R.id.people_recycler);
         mrecyclerPeopleAdapter = new RecyclerPeopleAdapter(PeopleActivity.this,members);
@@ -45,7 +45,7 @@ public class PeopleActivity extends AppCompatActivity {
          progressDialog=new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading......");
-        readFromDB();
+       ListenToDB();
     }
 
     public void goHome(View view) {
@@ -53,15 +53,18 @@ public class PeopleActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-    private void  readFromDB(){
-        firebaseFirestore.collection("members").orderBy("firsname", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
+    private void ListenToDB(){
+        mfirebaseFirestore.collection("members").orderBy("firstname", Query.Direction.ASCENDING)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if(error !=null){
-                    progressDialog.dismiss();
+                    if(progressDialog.isShowing()){
+                    progressDialog.dismiss();}
                     Toast.makeText(PeopleActivity.this, "Oops! "+error.getMessage(), Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                for (DocumentChange updatedList:value.getDocumentChanges()){
+                for (DocumentChange updatedList : value.getDocumentChanges()){
                     if(updatedList.getType()==DocumentChange.Type.ADDED){
                         members.add(updatedList.getDocument().toObject(Member.class));
                     }
