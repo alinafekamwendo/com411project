@@ -45,6 +45,11 @@
         android:layout_below="@id/toolbar2"
         android:background="#A69999"
         tools:listitem="@layout/single_chat_item"/>
+    <ProgressBar
+        android:id="@+id/people_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
 
 
 </RelativeLayout>

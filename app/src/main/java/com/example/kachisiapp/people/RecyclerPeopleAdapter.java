@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -40,10 +41,10 @@ public class RecyclerPeopleAdapter extends RecyclerView.Adapter<RecyclerPeopleAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Member member= membersList.get(position);
-       //String fullName=member.firstname.toString()+" "+member.surname.toString();
-        holder.userName.setText(member.getFirstname());
-        holder.userPhone.setText(member.phoneNumber);
-        holder.userCategory.setText(member.category);
+        holder.firstName.setText(member.getFirstname().toString().trim());
+        holder.lastName.setText(member.getSurname().toString().trim());
+        holder.userPhone.setText(member.getPhoneNumber().toString());
+        holder.userCategory.setText(member.getCategory().toString());
 
     }
 
@@ -54,13 +55,13 @@ public class RecyclerPeopleAdapter extends RecyclerView.Adapter<RecyclerPeopleAd
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-
-        TextView userName,userCategory,userPhone;
-
+        ImageView avatar;
+        TextView firstName,userCategory,userPhone,lastName;
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
-            userName=itemView.findViewById(R.id.member_fullname);
+            lastName=itemView.findViewById(R.id.member_surname);
+            firstName =itemView.findViewById(R.id.member_firstname);
             userCategory=itemView.findViewById(R.id.member_category);
             userPhone=itemView.findViewById(R.id.member_phoneNumber);
         }

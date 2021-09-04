@@ -6,7 +6,7 @@ public class Member {
 
      private String surname,firstname;
      int age;
-    String phoneNumber,category,email,password;
+    private String phoneNumber,category,email,password;
 
     public Member() {
     }

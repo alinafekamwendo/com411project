@@ -34,6 +34,6 @@
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:backgroundTint="@color/button_blue"
-            android:text="stream" />
+            android:text="refresh" />
 
 </RelativeLayout>

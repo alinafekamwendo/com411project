@@ -4,17 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerInParent="true"
     tools:context=".LaunchActivity">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="TERBENACLE"
         android:fontFamily="@font/aclonica"
+        android:text="WELCOME"
         android:textSize="50sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginTop="150dp"
+        android:id="@+id/welcome"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:text="Powered By"
+        android:textColor="#245312"
+        android:textSize="20sp"
+        android:id="@+id/powered"
+        android:layout_marginTop="150dp"
+        android:layout_below="@+id/welcome"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:text="KING NAFE"
+        android:textColor="#B79C3A"
+        android:textSize="30sp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/powered"
+        android:layout_centerHorizontal="true"/>
 
 
 

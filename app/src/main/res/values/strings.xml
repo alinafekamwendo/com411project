@@ -9,7 +9,9 @@
 
     <string-array name="category_array">
         <item>Member</item>
-        <item>Admin</item>
+        <item>Treasurer</item>
+        <item>Choir coordinator</item>
+        <item>Media Coordinator</item>
     </string-array>
 
     <string name="invalid_firstname">first name can not be empty</string>

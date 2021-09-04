@@ -28,6 +28,9 @@ public class HomeDrawer extends AppCompatActivity {
         setContentView(R.layout.activity_home_drawer);
 
         homeDrawer=findViewById(R.id.homeNav_drawer);
+
+
+
     }
 public void ClickMenu(View view){
         //on clicking menu picture on the top bottom bar open drawer

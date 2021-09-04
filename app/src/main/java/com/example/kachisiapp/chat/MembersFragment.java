@@ -1,6 +1,5 @@
 package com.example.kachisiapp.chat;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -35,7 +34,7 @@ public class MembersFragment extends Fragment {
     FirebaseFirestore firebaseFirestore;
     Context context;
     List<Member> members;
-    ProgressDialog progressDialog;
+
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -47,45 +46,40 @@ public class MembersFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_members, container, false);
+        View view = inflater.inflate(R.layout.fragment_members, container, false);
 
         //initialising variables
-        recyclerView=view.findViewById(R.id.membersFragment_recyclerView);
-        members=new ArrayList<Member>();
+        recyclerView = view.findViewById(R.id.membersFragment_recyclerView);
+        members = new ArrayList<Member>();
         //firestore instance
-        firebaseFirestore=FirebaseFirestore.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
 
         //adapter
-        mrecyclerPeopleAdapter= new RecyclerPeopleAdapter(getActivity(),members);
+        mrecyclerPeopleAdapter = new RecyclerPeopleAdapter(getActivity(), members);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(mrecyclerPeopleAdapter);
 
-        progressDialog=new ProgressDialog(getActivity());
-        progressDialog.setCancelable(false);
-        progressDialog.setMessage("Loading......");
         EventChangeListener();
 
 
         return view;
 
 
-
-
     }
-    private void EventChangeListener(){
+
+
+    private void EventChangeListener() {
         firebaseFirestore.collection("members").orderBy("firstname", Query.Direction.ASCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        if(error !=null){
-                            if(progressDialog.isShowing()){
-                                progressDialog.dismiss();}
-                            Toast.makeText(getActivity(), "Oops! "+error.getMessage(), Toast.LENGTH_SHORT).show();
+                        if (error != null) {
+                            Toast.makeText(getActivity(), "Oops! " + error.getMessage(), Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        for (DocumentChange updatedList : value.getDocumentChanges()){
-                            if(updatedList.getType()==DocumentChange.Type.ADDED){
+                        for (DocumentChange updatedList : value.getDocumentChanges()) {
+                            if (updatedList.getType() == DocumentChange.Type.ADDED) {
                                 members.add(updatedList.getDocument().toObject(Member.class));
                             }
                             mrecyclerPeopleAdapter.notifyDataSetChanged();
