@@ -34,6 +34,7 @@ public class RecyclerNotificationAdapter extends RecyclerView.Adapter<RecyclerNo
     @Override
     public void onBindViewHolder(@NonNull NotificationViewHolder holder, int position) {
         Notification currentNotification=notifications.get(position);
+        holder.dateText.setText(currentNotification.getDate());
         holder.textTitle.setText(currentNotification.getTitle());
         holder.timeText.setText(currentNotification.getTime());
         holder.messageText.setText(currentNotification.getMessage());
@@ -91,9 +92,10 @@ public class RecyclerNotificationAdapter extends RecyclerView.Adapter<RecyclerNo
     //end of filtering
 
     class NotificationViewHolder extends RecyclerView.ViewHolder{
-        private TextView textTitle,messageText,timeText;
+        private final TextView textTitle,messageText,timeText,dateText;
     public NotificationViewHolder(@NonNull View itemView) {
         super(itemView);
+        dateText=itemView.findViewById(R.id.notification_date);
         textTitle=itemView.findViewById(R.id.notification_title);
         timeText=itemView.findViewById(R.id.notification_time);
         messageText=itemView.findViewById(R.id.notification_message);

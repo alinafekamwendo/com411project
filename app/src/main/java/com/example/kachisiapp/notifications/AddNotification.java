@@ -1,5 +1,6 @@
 package com.example.kachisiapp.notifications;
 
+import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.icu.util.Calendar;
@@ -7,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -16,13 +18,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kachisiapp.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 
 public class AddNotification extends AppCompatActivity {
     public static final String TITLE= "com.example.kachisiapp.notifications.TITLE";
     public static final String TIME= "com.example.kachisiapp.notifications.TIME";
     public static final String MESSAGE= "com.example.kachisiapp.notifications.MESSAGE";
-    private EditText title, message, time;
-    private Button saveBtn;
+    public static final String DATE= "com.example.kachisiapp.notifications.DATE";
+    private EditText title, message, time,date;
+    private Calendar calendar;
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +39,49 @@ public class AddNotification extends AppCompatActivity {
         title = findViewById(R.id.add_title);
         time = findViewById(R.id.add_time);
         message = findViewById(R.id.add_message);
-        saveBtn=findViewById(R.id.add_save);
+        Button saveBtn = findViewById(R.id.add_save);
+        date=findViewById(R.id.add_date);
+        calendar=Calendar.getInstance();
+
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveNotification();
+            }
+        });
+
+        //date picker
+
+            date.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    new DatePickerDialog(AddNotification.this, datePickerListener, calendar
+                            .get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+                            calendar.get(Calendar.DAY_OF_MONTH)).show();
+                }
+
+                DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                          int dayOfMonth) {
+                        calendar.set(Calendar.YEAR, year);
+                        calendar.set(Calendar.MONTH, monthOfYear);
+                        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy", Locale.ITALIAN);
+                        date.setText(sdf.format(calendar.getTime()));
+                    }
+
+                };
+
+            });
+
+
+
+
+//time picker
 
         time.setOnClickListener(new View.OnClickListener() {
 
@@ -49,11 +99,13 @@ public class AddNotification extends AppCompatActivity {
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                         if(selectedHour>=12){
                           String  status="PM";
-                        time.setText( selectedHour + ":" + selectedMinute+" "+status);
+                          String mTime=selectedHour + ":" + selectedMinute+" "+status;
+                        time.setText( mTime);
                         }
                         if(selectedHour<12){
                             String status="AM";
-                            time.setText( selectedHour + ":" + selectedMinute+" "+status);
+                            String mTime=selectedHour + ":" + selectedMinute+" "+status;
+                            time.setText( mTime);
                         }
 
                     }
@@ -72,7 +124,8 @@ public class AddNotification extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void saveNotification(View view) {
+    public void saveNotification() {
+        String add_date=date.getText().toString();
         String add_title = title.getText().toString();
         String add_time = time.getText().toString();
         String add_message = message.getText().toString();
@@ -85,7 +138,9 @@ public class AddNotification extends AppCompatActivity {
         notificationDetails.putExtra(TITLE,add_title);
         notificationDetails.putExtra(MESSAGE,add_message);
         notificationDetails.putExtra(TIME,add_time);
+        notificationDetails.putExtra(DATE,add_date);
         setResult(RESULT_OK,notificationDetails);
         finish();
     }
+
 }

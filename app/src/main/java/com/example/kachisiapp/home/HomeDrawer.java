@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -13,22 +14,23 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.kachisiapp.R;
 import com.example.kachisiapp.chat.ChatHomeActivity;
+import com.example.kachisiapp.loginRegister.LoginActivity;
 import com.example.kachisiapp.notifications.NotificationsActivity;
 import com.example.kachisiapp.people.PeopleActivity;
 import com.example.kachisiapp.youtubechannel.YoutubeActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeDrawer extends AppCompatActivity {
 
     //initializing
     DrawerLayout homeDrawer;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_drawer);
-
         homeDrawer=findViewById(R.id.homeNav_drawer);
-
 
 
     }
@@ -104,7 +106,7 @@ public void ClickMenu(View view){
                 System.exit(0);
             }
         });
-        //if not ready to logout
+        //if not ready to exit
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -118,5 +120,34 @@ public void ClickMenu(View view){
         super.onPause();
         closeDrawer(homeDrawer);
 
+    }
+
+    public void ClickLogout(View view) {
+        logout(this);
+    }
+
+    public static void logout(Activity activity) {
+        AlertDialog.Builder builder =new AlertDialog.Builder(activity);
+        builder.setTitle("Logout");
+        builder.setMessage("Do you really want to logout?");
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //finishing
+                FirebaseAuth.getInstance().signOut();
+                redirectActivity(activity,LoginActivity.class);
+
+            }
+        });
+        //if not ready to logout
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                Toast.makeText(activity.getApplicationContext(), "cancelled", Toast.LENGTH_SHORT).show();
+            }
+        });
+        //display some message of the dismissal
+        builder.show();
     }
 }

@@ -46,6 +46,21 @@
             android:layout_alignParentRight="true"
             />
 
+        <TextView
+            android:id="@+id/notification_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="date"
+            android:textSize="20dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/bright_green"
+            android:layout_below="@id/notification_message"
+             android:layout_toLeftOf="@+id/notification_time"
+            />
+
 
         <TextView
             android:id="@+id/notification_message"

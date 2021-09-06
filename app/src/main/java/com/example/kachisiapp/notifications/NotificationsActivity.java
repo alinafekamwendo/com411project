@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -84,7 +84,8 @@ public class NotificationsActivity extends AppCompatActivity {
                         String title=result.getData().getStringExtra(AddNotification.TITLE);
                         String time=result.getData().getStringExtra(AddNotification.TIME);
                         String message=result.getData().getStringExtra(AddNotification.MESSAGE);
-                        Notification notification=new Notification(title,message,time);
+                        String date=result.getData().getStringExtra(AddNotification.DATE);
+                        Notification notification=new Notification(title,message,time,date);
                         notificationVModel.insert(notification);
                         Toast.makeText(NotificationsActivity.this, "saved succesfully", Toast.LENGTH_SHORT).show();
                     }
@@ -107,7 +108,8 @@ public class NotificationsActivity extends AppCompatActivity {
         RecyclerNotificationAdapter recyclerNotificationAdapter=new RecyclerNotificationAdapter();
         recyclerView.setAdapter(recyclerNotificationAdapter);
 
-        notificationVModel= ViewModelProviders.of(NotificationsActivity.this).get(NotificationVModel.class);
+        //notificationVModel= ViewModelProviders.of(NotificationsActivity.this).get(NotificationVModel.class);
+        notificationVModel= new ViewModelProvider(this).get(NotificationVModel.class);
         notificationVModel.getAllNotifications().observe(this,new Observer<List<Notification>>() {
             @Override
             public void onChanged(List<Notification> notifications) {

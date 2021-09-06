@@ -13,18 +13,29 @@ public class Notification {
     @ColumnInfo(name ="title")
     private String title;
 
+    @ColumnInfo(name = "date")
+    private String date;
     @ColumnInfo(name = "message")
     private String message;
 
     @ColumnInfo(name = "time")
     private  String time;
 
-    public Notification(String title, String message, String time) {
+    public Notification(String title, String message, String time,String date) {
+        this.date=date;
         this.title = title;
         this.message = message;
         this.time = time;
     }
     //generate setters and getters
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public void setUniqueId(int uniqueId){this.uniqueId=uniqueId;}
     public void setTitle(String title) {

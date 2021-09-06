@@ -24,7 +24,7 @@ public interface NotificationDAO {
     @Query("DELETE FROM notifications_table")
     void deleteAllNotifications();
 
-    @Query("SELECT * FROM notifications_table ORDER BY time ASC")
+    @Query("SELECT * FROM notifications_table ORDER BY date ASC")
     LiveData<List<Notification>> getAllNotifications();
 
 

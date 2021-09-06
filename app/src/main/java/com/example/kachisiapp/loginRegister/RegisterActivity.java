@@ -112,7 +112,7 @@ public class RegisterActivity extends AppCompatActivity {
                             userId= firebaseAuth.getCurrentUser().getUid();
 
                             //creating document instance to store our members data,passing the id to the document
-                            DocumentReference registeredUsers=firebaseFirestore.collection("members").document(email);
+                            DocumentReference registeredUsers=firebaseFirestore.collection("members").document(firstname);
                             Map<String,Object> member=new HashMap<>();
                             member.put("firstname",firstname);
                             member.put("surname",surname);
@@ -120,6 +120,7 @@ public class RegisterActivity extends AppCompatActivity {
                             member.put("phoneNumber",phone);
                             member.put("category",memberCategory);
                             member.put("password",password);
+                            member.put("ID",userId);
                             registeredUsers.set(member).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {

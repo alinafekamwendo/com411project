@@ -40,7 +40,7 @@ public abstract class RoomDBForNotifications extends RoomDatabase {
         }
     };
     public static class FillTheDbAsyncTask extends AsyncTask<Void,Void,Void>{
-        private NotificationDAO notificationDAO;
+        private  NotificationDAO notificationDAO;
         private FillTheDbAsyncTask(RoomDBForNotifications roomDBForNotifications){
             notificationDAO=roomDBForNotifications.notificationDAO();
         }
